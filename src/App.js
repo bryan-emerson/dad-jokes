@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      dadJokes: ""
+    }
+  }
+
+  componentDidMount(){
+    const url = "https://icanhazdadjoke.com/"
+
+    fetch(url, {
+      headers: {"Accept": "application/json"}
+    })
+      .then(response=>response.json())
+      .then(data=>{
+        console.log(data.joke)
+        this.setState({dadJokes: data.joke})
+      })
+  }
+
+  freshJoke = () => {
+    const url = "https://icanhazdadjoke.com/"
+
+    fetch(url, {
+      headers: {"Accept": "application/json"}
+    })
+      .then(response=>response.json())
+      .then(data=>{
+        console.log(this)
+        this.setState({dadJokes: data.joke})
+      })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <h1>{this.state.dadJokes}</h1>
+        <button onClick={this.freshJoke}>Fresh Dad Joke Button</button>
       </div>
     );
   }
