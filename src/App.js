@@ -38,8 +38,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.dadJokes}</h1>
-        <button onClick={this.freshJoke}>Fresh Dad Joke Button</button>
+        <h1 className='nav'>Dad Jokes</h1>
+        <div className='dadbox'>
+        <h2>{this.state.dadJokes}</h2>
+        </div>
+        <button className='button' onClick={this.freshJoke}>Fresh Dad Joke Button</button>
       </div>
     );
   }
