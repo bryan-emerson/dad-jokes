@@ -1,28 +1,28 @@
-.App {
-  text-align: center;
+
+
+.dadbox {
+  border: 2px solid black;
+  width: 30vw;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 8vh;
+  box-shadow: 5px 5px 5px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.button {
+  display: block;
+  font-size: 36px;
+  background-color: black;
   color: white;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px;
+  margin: auto;
+  margin-top: 2vh;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.nav {
+  background-color: black;
+  color: white;
+  height: 5vh;
+  margin-top: -1px;
 }
