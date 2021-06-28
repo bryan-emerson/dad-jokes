@@ -9,16 +9,16 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const url = "https://icanhazdadjoke.com/"
 
     fetch(url, {
-      headers: {"Accept": "application/json"}
+      headers: { "Accept": "application/json" }
     })
-      .then(response=>response.json())
-      .then(data=>{
+      .then(response => response.json())
+      .then(data => {
         console.log(data.joke)
-        this.setState({dadJokes: data.joke})
+        this.setState({ dadJokes: data.joke })
       })
   }
 
@@ -26,12 +26,12 @@ class App extends Component {
     const url = "https://icanhazdadjoke.com/"
 
     fetch(url, {
-      headers: {"Accept": "application/json"}
+      headers: { "Accept": "application/json" }
     })
-      .then(response=>response.json())
-      .then(data=>{
+      .then(response => response.json())
+      .then(data => {
         console.log(this)
-        this.setState({dadJokes: data.joke})
+        this.setState({ dadJokes: data.joke })
       })
   }
 
@@ -40,11 +40,9 @@ class App extends Component {
       <div>
         <h1 className='nav'>Dad Jokes</h1>
         <div className='dadbox'>
-        <h2>{this.state.dadJokes}</h2>
+          <h2>{this.state.dadJokes}</h2>
         </div>
-        <div className='buttonbox'>
         <button className='button' onClick={this.freshJoke}>Fresh Dad Joke Button</button>
-        </div>
       </div>
     );
   }
